@@ -1,0 +1,5 @@
+streamlit
+pydantic
+orjson
+python-dotenv
+loguru
