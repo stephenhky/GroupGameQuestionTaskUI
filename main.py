@@ -2,13 +2,15 @@
 import os
 from pathlib import Path
 from random import choice
+import warnings
 
-import orjson
 import streamlit as st
 from loguru import logger
 from dotenv import load_dotenv
+import orjson
 
-from schemas.questions import QuestionDataset, QuestionCategory
+from schemas.questions import difficulty_levels, chinese_difficulty_levels
+from schemas.io import load_question_dataset
 
 # load environment variables
 load_dotenv()
@@ -18,49 +20,57 @@ current_dir = Path(__file__).parent
 logger.info(f"Current Directory: {current_dir.as_posix()}")
 question_filename = os.getenv("QUESTIONFILENAME")
 logger.info(f"Question filename: {question_filename}")
-loaded_question_dataset = QuestionDataset.model_validate(
-    orjson.loads(
-        open(current_dir / "data" / question_filename, "rb").read()
-    )
-)
-# filter seen questions
-logger.info("Filtering questions")
-question_dataset = QuestionDataset(
-    dataset={
-        name: QuestionCategory(
-            name=question_category.name,
-            easy=[
-                question for question in question_category.easy if not question.seen
-            ],
-            intermediate=[
-                question for question in question_category.intermediate if not question.seen
-            ],
-            difficult=[
-                question for question in question_category.difficult if not question.seen
-            ]
-        )
-        for name, question_category in loaded_question_dataset.dataset.items()
-    }
+
+# load and filter dataset
+logger.info(f"Load and filter dataset from {(current_dir / "data" / question_filename).as_posix()}")
+question_dataset = load_question_dataset(
+    current_dir / "data" / question_filename,
+    filter=False
 )
 categories = list(question_dataset.dataset.keys())
 nb_categories = len(categories)
-difficulty_levels = ["easy", "intermediate", "difficult"]
-chinese_difficulty_levels = {
-    "easy": "極容易",
-    "intermediate": "普通",
-    "difficult": "極難"
-}
 
 st.set_page_config(page_title='Game Questions')
 
 if st.button("題目類型"):
     category = choice(categories)
+    logger.info(f"Category: {category}")
     st.text(f"題目類型: {category}")
 
     if st.button("難度"):
         difficulty_level = choice(difficulty_levels)
+        logger.info(f"Difficulty level: {difficulty_level}")
         st.text(f"難度: {chinese_difficulty_levels[difficulty_level]}")
 
         if st.button("觀看問題"):
-            pass
+            question_category = question_dataset.dataset.get(category)
+            match difficulty_level:
+                case "easy":
+                    questions = question_category.easy
+                case "intermediate":
+                    questions = question_category.intermediate
+                case "difficult":
+                    questions = question_category.difficult
+                case _:
+                    warnings.warn(f"Unknown level: {difficulty_level}")
+                    questions = []
+
+            available_question_indices = [
+                idx
+                for idx, question in enumerate(questions)
+                if not question.seen
+            ]
+            picked_index = choice(available_question_indices)
+            logger.info(f"Picked index: {picked_index}")
+            picked_question = questions[picked_index]
+            # set seen
+            picked_question.seen = True
+            # save
+            logger.info("Update seen flag.")
+            open(current_dir / "data" / question_filename, "rb").write(
+                orjson.dumps(question_dataset.model_dump())
+            )
+
+            st.text(picked_question.chinese)
+            st.text(picked_question.english)
 
