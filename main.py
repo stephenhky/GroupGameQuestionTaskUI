@@ -68,9 +68,34 @@ if st.button("題目類型"):
             # save
             logger.info("Update seen flag.")
             open(current_dir / "data" / question_filename, "rb").write(
-                orjson.dumps(question_dataset.model_dump())
+                orjson.dumps(question_dataset.model_dump(), option=orjson.OPT_INDENT_2)
             )
 
             st.text(picked_question.chinese)
             st.text(picked_question.english)
+
+            answer_options = picked_question.answer_options
+            radio_button_format_func = lambda pickidx: \
+                f"{answer_options[pickidx-1].chinese} {answer_options[pickidx-1].english}"
+            player_selected_answer = st.radio(
+                "選你的答案",
+                options=list(range(1, len(answer_options))),
+                format_func=radio_button_format_func
+            )
+            logger.info(player_selected_answer)
+
+            if st.button("回答"):
+                correct = player_selected_answer.correct
+                if correct is None:
+                    st.text("人肉評判")
+                elif correct:
+                    st.text("正確！")
+                else:
+                    st.text("不正確喔！正確答案是：")
+                    for i, answer_option in enumerate(answer_options):
+                        if (answer_option.correct is not None) and (answer_option.correct):
+                            st.text(f"{i}: {answer_option.chinese} {answer_option.english}")
+
+                if st.button("Next>"):
+                    pass
 
