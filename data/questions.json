@@ -25,7 +25,72 @@
           ]
         }
       ],
-      "intermediate": [],
+      "intermediate": [
+        {
+          "chinese": "使徒保羅屬於以色列哪一個支派？",
+          "english": "To which tribe of Israel did Apostle Paul being?",
+          "answer_options": [
+            {"chinese": "流便", "english": "Reuben", "correct": false},
+            {"chinese": "猶大", "english": "Judah", "correct": false},
+            {"chinese": "以法連", "english": "Ephraim", "correct": false},
+            {"chinese": "便雅憫", "english": "Benjamin", "correct": true}
+          ],
+          "seen": false
+        }
+      ],
+      "difficult": [
+        {
+          "chinese": "挪亞的父親的名字是什麼？",
+          "english": "What is the name of Noah's father?",
+          "answer_options": [
+            {"chinese": "拉麥", "english": "Lamech", "correct": true},
+            {"chinese": "瑪土撒拉", "english": "Methuselah", "correct": false},
+            {"chinese": "雅列", "english": "Jared", "correct": false},
+            {"chinese": "以挪士", "english": "Enosh", "correct": false}
+          ],
+          "seen": false
+        }
+      ]
+    },
+    "Trivia": {
+      "name": "Trivia",
+      "easy": [
+        {
+          "chinese": "一加一等於？",
+          "english": "1+1=?",
+          "answer_options": [
+            {"chinese": "一", "english": "1", "correct": false},
+            {"chinese": "二", "english": "2", "correct": true},
+            {"chinese": "三", "english": "3", "correct": false},
+            {"chinese": "四", "english": "4", "correct": false}
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "以下哪一個不是美國現任總統Donald Trump的中文譯名？",
+          "english": "Which of the following is not the Chinese translation of President Donald Trump?",
+          "answer_options": [
+            {"chinese": "特朗普", "english": " ", "correct": false},
+            {"chinese": "侵", "english": " ", "correct": false},
+            {"chinese": "川普", "english": " ", "correct": false},
+            {"chinese": "魯比奧", "english": " ", "correct": true}
+          ],
+          "seen": false
+        }
+      ],
+      "intermediate": [
+        {
+          "chinese": "澳大利亞的首都是____",
+          "english": "The capital of Australia is _____",
+          "answer_options": [
+            {"chinese": "悉尼", "english": "Sydney", "correct": false},
+            {"chinese": "坎培拉", "english": "Canberra", "correct": true},
+            {"chinese": "墨爾本", "english": "Melbourne", "correct": false},
+            {"chinese": "布里斯班", "english": "Brisbane", "correct": false}
+          ],
+          "seen": false
+        }
+      ],
       "difficult": []
     }
   }
