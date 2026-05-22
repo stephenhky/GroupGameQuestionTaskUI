@@ -1,0 +1,32 @@
+{
+  "dataset": {
+    "Bible": {
+      "name": "Bible",
+      "easy": [
+        {
+          "chinese": "神的獨生兒子叫什麼名字？",
+          "english": "What is the name of God's only begotten son?",
+          "answer_options": [
+            {"chinese": "亞當", "english": "Adam", "correct": false},
+            {"chinese": "大衛", "english": "David", "correct": false},
+            {"chinese": "耶穌", "english": "Jesus", "correct": true},
+            {"chinese": "彼得", "english": "Peter", "correct": false}
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "上帝沒有跟以下哪一人立約？",
+          "english": "With whom did God not make a covenant?",
+          "answer_options": [
+            {"chinese": "亞伯拉罕", "english": "Abraham", "correct": false},
+            {"chinese": "掃羅", "english": "Saul", "correct": true},
+            {"chinese": "大衛", "english": "David", "correct": false},
+            {"chinese": "挪亞", "english": "Noah", "correct": false}
+          ]
+        }
+      ],
+      "intermediate": [],
+      "difficult": []
+    }
+  }
+}
