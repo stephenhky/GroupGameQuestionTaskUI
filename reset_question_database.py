@@ -18,6 +18,9 @@ import argparse
 from pathlib import Path
 from typing import Dict, Any, Union
 
+from pydantic import ValidationError
+from schemas.questions import QuestionDataset
+
 
 def reset_seen_fields(data: Union[Dict[str, Any], list]) -> None:
     """
@@ -86,6 +89,23 @@ def load_json_file(file_path: Path) -> Dict[str, Any]:
         raise json.JSONDecodeError(f"Invalid JSON in file {file_path}: {e.msg}", e.doc, e.pos)
     except PermissionError:
         raise PermissionError(f"Permission denied reading file: {file_path}")
+
+
+def validate_json_schema(data: Dict[str, Any]) -> None:
+    """
+    Validate JSON data against the QuestionDataset schema.
+    
+    Args:
+        data: The JSON data to validate
+        
+    Raises:
+        ValidationError: If data doesn't match the expected schema
+    """
+    try:
+        QuestionDataset.model_validate(data)
+    except ValidationError as e:
+        # Re-raise with more context
+        raise ValidationError(f"JSON schema validation failed: {e}")
 
 
 def save_json_file(file_path: Path, data: Dict[str, Any]) -> None:
@@ -169,6 +189,10 @@ def main():
         data = load_json_file(file_path)
         print("✓ JSON file loaded successfully")
         
+        # Validate JSON schema
+        validate_json_schema(data)
+        print("✓ JSON schema validation passed")
+        
         # Count current seen fields
         initial_counts = count_seen_fields(data)
         print(f"Found {initial_counts['total']} questions with 'seen' fields:")
@@ -211,6 +235,9 @@ def main():
         sys.exit(1)
     except json.JSONDecodeError as e:
         print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except ValidationError as e:
+        print(f"Schema validation error: {e}", file=sys.stderr)
         sys.exit(1)
     except PermissionError as e:
         print(f"Error: {e}", file=sys.stderr)
