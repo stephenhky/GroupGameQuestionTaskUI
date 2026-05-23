@@ -32,70 +32,114 @@ nb_categories = len(categories)
 
 st.set_page_config(page_title='Game Questions')
 
-if st.button("題目類型"):
-    category = choice(categories)
-    logger.info(f"Category: {category}")
-    st.text(f"題目類型: {category}")
+# Initialize session state
+if 'step' not in st.session_state:
+    st.session_state.step = 0
+if 'category' not in st.session_state:
+    st.session_state.category = None
+if 'difficulty_level' not in st.session_state:
+    st.session_state.difficulty_level = None
+if 'picked_question' not in st.session_state:
+    st.session_state.picked_question = None
+if 'player_selected_answer' not in st.session_state:
+    st.session_state.player_selected_answer = None
 
+# Step 1: Choose category
+if st.session_state.step >= 0:
+    if st.button("題目類型"):
+        st.session_state.category = choice(categories)
+        st.session_state.step = 1
+        logger.info(f"Category: {st.session_state.category}")
+        st.rerun()
+    
+    if st.session_state.category:
+        st.text(f"題目類型: {st.session_state.category}")
+
+# Step 2: Choose difficulty
+if st.session_state.step >= 1:
     if st.button("難度"):
-        difficulty_level = choice(difficulty_levels)
-        logger.info(f"Difficulty level: {difficulty_level}")
-        st.text(f"難度: {chinese_difficulty_levels[difficulty_level]}")
+        st.session_state.difficulty_level = choice(difficulty_levels)
+        st.session_state.step = 2
+        logger.info(f"Difficulty level: {st.session_state.difficulty_level}")
+        st.rerun()
+    
+    if st.session_state.difficulty_level:
+        st.text(f"難度: {chinese_difficulty_levels[st.session_state.difficulty_level]}")
 
-        if st.button("觀看問題"):
-            question_category = question_dataset.dataset.get(category)
-            match difficulty_level:
-                case "easy":
-                    questions = question_category.easy
-                case "intermediate":
-                    questions = question_category.intermediate
-                case "difficult":
-                    questions = question_category.difficult
-                case _:
-                    warnings.warn(f"Unknown level: {difficulty_level}")
-                    questions = []
+# Step 3: Show question
+if st.session_state.step >= 2:
+    if st.button("觀看問題"):
+        question_category = question_dataset.dataset.get(st.session_state.category)
+        match st.session_state.difficulty_level:
+            case "easy":
+                questions = question_category.easy
+            case "intermediate":
+                questions = question_category.intermediate
+            case "difficult":
+                questions = question_category.difficult
+            case _:
+                warnings.warn(f"Unknown level: {st.session_state.difficulty_level}")
+                questions = []
 
-            available_question_indices = [
-                idx
-                for idx, question in enumerate(questions)
-                if not question.seen
-            ]
-            picked_index = choice(available_question_indices)
-            logger.info(f"Picked index: {picked_index}")
-            picked_question = questions[picked_index]
-            # set seen
-            picked_question.seen = True
-            # save
-            logger.info("Update seen flag.")
-            open(current_dir / "data" / question_filename, "rb").write(
-                orjson.dumps(question_dataset.model_dump(), option=orjson.OPT_INDENT_2)
-            )
+        available_question_indices = [
+            idx
+            for idx, question in enumerate(questions)
+            if not question.seen
+        ]
+        picked_index = choice(available_question_indices)
+        logger.info(f"Picked index: {picked_index}")
+        st.session_state.picked_question = questions[picked_index]
+        # set seen
+        st.session_state.picked_question.seen = True
+        # save
+        logger.info("Update seen flag.")
+        with open(current_dir / "data" / question_filename, "wb") as f:
+            f.write(orjson.dumps(question_dataset.model_dump(), option=orjson.OPT_INDENT_2))
+        
+        st.session_state.step = 3
+        st.rerun()
 
-            st.text(picked_question.chinese)
-            st.text(picked_question.english)
+# Step 4: Display question and collect answer
+if st.session_state.step >= 3 and st.session_state.picked_question:
+    st.text(st.session_state.picked_question.chinese)
+    st.text(st.session_state.picked_question.english)
 
-            answer_options = picked_question.answer_options
-            radio_button_format_func = lambda pickidx: \
-                f"{answer_options[pickidx-1].chinese} {answer_options[pickidx-1].english}"
-            player_selected_answer = st.radio(
-                "選你的答案",
-                options=list(range(1, len(answer_options))),
-                format_func=radio_button_format_func
-            )
-            logger.info(player_selected_answer)
+    answer_options = st.session_state.picked_question.answer_options
+    radio_button_format_func = lambda pickidx: \
+        f"{answer_options[pickidx-1].chinese} {answer_options[pickidx-1].english}"
+    st.session_state.player_selected_answer = st.radio(
+        "選你的答案",
+        options=list(range(1, len(answer_options)+1)),
+        format_func=radio_button_format_func
+    )
+    logger.info(st.session_state.player_selected_answer)
 
-            if st.button("回答"):
-                correct = player_selected_answer.correct
-                if correct is None:
-                    st.text("人肉評判")
-                elif correct:
-                    st.text("正確！")
-                else:
-                    st.text("不正確喔！正確答案是：")
-                    for i, answer_option in enumerate(answer_options):
-                        if (answer_option.correct is not None) and (answer_option.correct):
-                            st.text(f"{i}: {answer_option.chinese} {answer_option.english}")
+    if st.button("回答"):
+        st.session_state.step = 4
+        st.rerun()
 
-                if st.button("Next>"):
-                    pass
+# Step 5: Show results
+if st.session_state.step >= 4 and st.session_state.picked_question and st.session_state.player_selected_answer:
+    answer_options = st.session_state.picked_question.answer_options
+    selected_option = answer_options[st.session_state.player_selected_answer-1]
+    correct = selected_option.correct
+    
+    if correct is None:
+        st.text("人肉評判")
+    elif correct:
+        st.text("正確！")
+    else:
+        st.text("不正確喔！正確答案是：")
+        for i, answer_option in enumerate(answer_options):
+            if (answer_option.correct is not None) and (answer_option.correct):
+                st.text(f"{i+1}: {answer_option.chinese} {answer_option.english}")
+
+    if st.button("Next>"):
+        # Reset for next question
+        st.session_state.step = 0
+        st.session_state.category = None
+        st.session_state.difficulty_level = None
+        st.session_state.picked_question = None
+        st.session_state.player_selected_answer = None
+        st.rerun()
 

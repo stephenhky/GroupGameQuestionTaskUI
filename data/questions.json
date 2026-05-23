@@ -7,10 +7,26 @@
           "chinese": "神的獨生兒子叫什麼名字？",
           "english": "What is the name of God's only begotten son?",
           "answer_options": [
-            {"chinese": "亞當", "english": "Adam", "correct": false},
-            {"chinese": "大衛", "english": "David", "correct": false},
-            {"chinese": "耶穌", "english": "Jesus", "correct": true},
-            {"chinese": "彼得", "english": "Peter", "correct": false}
+            {
+              "chinese": "亞當",
+              "english": "Adam",
+              "correct": false
+            },
+            {
+              "chinese": "大衛",
+              "english": "David",
+              "correct": false
+            },
+            {
+              "chinese": "耶穌",
+              "english": "Jesus",
+              "correct": true
+            },
+            {
+              "chinese": "彼得",
+              "english": "Peter",
+              "correct": false
+            }
           ],
           "seen": false
         },
@@ -18,11 +34,28 @@
           "chinese": "上帝沒有跟以下哪一人立約？",
           "english": "With whom did God not make a covenant?",
           "answer_options": [
-            {"chinese": "亞伯拉罕", "english": "Abraham", "correct": false},
-            {"chinese": "掃羅", "english": "Saul", "correct": true},
-            {"chinese": "大衛", "english": "David", "correct": false},
-            {"chinese": "挪亞", "english": "Noah", "correct": false}
-          ]
+            {
+              "chinese": "亞伯拉罕",
+              "english": "Abraham",
+              "correct": false
+            },
+            {
+              "chinese": "掃羅",
+              "english": "Saul",
+              "correct": true
+            },
+            {
+              "chinese": "大衛",
+              "english": "David",
+              "correct": false
+            },
+            {
+              "chinese": "挪亞",
+              "english": "Noah",
+              "correct": false
+            }
+          ],
+          "seen": false
         }
       ],
       "intermediate": [
@@ -30,10 +63,26 @@
           "chinese": "使徒保羅屬於以色列哪一個支派？",
           "english": "To which tribe of Israel did Apostle Paul being?",
           "answer_options": [
-            {"chinese": "流便", "english": "Reuben", "correct": false},
-            {"chinese": "猶大", "english": "Judah", "correct": false},
-            {"chinese": "以法連", "english": "Ephraim", "correct": false},
-            {"chinese": "便雅憫", "english": "Benjamin", "correct": true}
+            {
+              "chinese": "流便",
+              "english": "Reuben",
+              "correct": false
+            },
+            {
+              "chinese": "猶大",
+              "english": "Judah",
+              "correct": false
+            },
+            {
+              "chinese": "以法連",
+              "english": "Ephraim",
+              "correct": false
+            },
+            {
+              "chinese": "便雅憫",
+              "english": "Benjamin",
+              "correct": true
+            }
           ],
           "seen": false
         }
@@ -43,10 +92,26 @@
           "chinese": "挪亞的父親的名字是什麼？",
           "english": "What is the name of Noah's father?",
           "answer_options": [
-            {"chinese": "拉麥", "english": "Lamech", "correct": true},
-            {"chinese": "瑪土撒拉", "english": "Methuselah", "correct": false},
-            {"chinese": "雅列", "english": "Jared", "correct": false},
-            {"chinese": "以挪士", "english": "Enosh", "correct": false}
+            {
+              "chinese": "拉麥",
+              "english": "Lamech",
+              "correct": true
+            },
+            {
+              "chinese": "瑪土撒拉",
+              "english": "Methuselah",
+              "correct": false
+            },
+            {
+              "chinese": "雅列",
+              "english": "Jared",
+              "correct": false
+            },
+            {
+              "chinese": "以挪士",
+              "english": "Enosh",
+              "correct": false
+            }
           ],
           "seen": false
         }
@@ -59,10 +124,26 @@
           "chinese": "一加一等於？",
           "english": "1+1=?",
           "answer_options": [
-            {"chinese": "一", "english": "1", "correct": false},
-            {"chinese": "二", "english": "2", "correct": true},
-            {"chinese": "三", "english": "3", "correct": false},
-            {"chinese": "四", "english": "4", "correct": false}
+            {
+              "chinese": "一",
+              "english": "1",
+              "correct": false
+            },
+            {
+              "chinese": "二",
+              "english": "2",
+              "correct": true
+            },
+            {
+              "chinese": "三",
+              "english": "3",
+              "correct": false
+            },
+            {
+              "chinese": "四",
+              "english": "4",
+              "correct": false
+            }
           ],
           "seen": false
         },
@@ -70,10 +151,26 @@
           "chinese": "以下哪一個不是美國現任總統Donald Trump的中文譯名？",
           "english": "Which of the following is not the Chinese translation of President Donald Trump?",
           "answer_options": [
-            {"chinese": "特朗普", "english": " ", "correct": false},
-            {"chinese": "侵", "english": " ", "correct": false},
-            {"chinese": "川普", "english": " ", "correct": false},
-            {"chinese": "魯比奧", "english": " ", "correct": true}
+            {
+              "chinese": "特朗普",
+              "english": " ",
+              "correct": false
+            },
+            {
+              "chinese": "侵",
+              "english": " ",
+              "correct": false
+            },
+            {
+              "chinese": "川普",
+              "english": " ",
+              "correct": false
+            },
+            {
+              "chinese": "魯比奧",
+              "english": " ",
+              "correct": true
+            }
           ],
           "seen": false
         }
@@ -83,10 +180,26 @@
           "chinese": "以下哪一條橋不接駁馬里蘭州和弗吉尼亞州？",
           "english": "Which of the following bridges does not connect Maryland and Virginia?",
           "answer_options": [
-            {"chinese": " ", "english": "Chesapeake Bay Bridge", "correct": true},
-            {"chinese": " ", "english": "Woodraw Wilson Bridge", "correct": false},
-            {"chinese": " ", "english": "American Legion Memorial Bridge", "correct": false},
-            {"chinese": " ", "english": "Chain Bridge", "correct": false}
+            {
+              "chinese": " ",
+              "english": "Chesapeake Bay Bridge",
+              "correct": true
+            },
+            {
+              "chinese": " ",
+              "english": "Woodraw Wilson Bridge",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "American Legion Memorial Bridge",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "Chain Bridge",
+              "correct": false
+            }
           ],
           "seen": false
         },
@@ -94,10 +207,26 @@
           "chinese": "以下哪一條橋不接駁馬里蘭州和弗吉尼亞州？",
           "english": "Which of the following bridges does not connect Maryland and Virginia?",
           "answer_options": [
-            {"chinese": " ", "english": "Chesapeake Bay Bridge", "correct": true},
-            {"chinese": " ", "english": "Woodraw Wilson Bridge", "correct": false},
-            {"chinese": " ", "english": "American Legion Memorial Bridge", "correct": false},
-            {"chinese": " ", "english": "Chain Bridge", "correct": false}
+            {
+              "chinese": " ",
+              "english": "Chesapeake Bay Bridge",
+              "correct": true
+            },
+            {
+              "chinese": " ",
+              "english": "Woodraw Wilson Bridge",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "American Legion Memorial Bridge",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "Chain Bridge",
+              "correct": false
+            }
           ],
           "seen": false
         }
@@ -107,10 +236,26 @@
           "chinese": "陳奕迅主唱《K歌之王》中內含多首歌名？",
           "english": "How many song names are included in Eason Chan's 'King of Karaoke'?",
           "answer_options": [
-            {"chinese": " ", "english": "12", "correct": false},
-            {"chinese": " ", "english": "26", "correct": true},
-            {"chinese": " ", "english": "32", "correct": false},
-            {"chinese": " ", "english": "40", "correct": false}
+            {
+              "chinese": " ",
+              "english": "12",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "26",
+              "correct": true
+            },
+            {
+              "chinese": " ",
+              "english": "32",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "40",
+              "correct": false
+            }
           ],
           "seen": false
         }
