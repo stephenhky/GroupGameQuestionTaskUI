@@ -56,6 +56,33 @@
             }
           ],
           "seen": false
+        },
+        {
+          "chinese": "根據使徒保羅，信、望、愛中，最大的是哪一個？",
+          "english": "According to Apostle Paul, which is the greatest among faith, hope, and love?",
+          "answer_options": [
+            {
+              "chinese": "信",
+              "english": "Faith",
+              "correct": false
+            },
+            {
+              "chinese": "望",
+              "english": "Hope",
+              "correct": false
+            },
+            {
+              "chinese": "愛",
+              "english": "Love",
+              "correct": true
+            },
+            {
+              "chinese": "以上皆非",
+              "english": "None of the above",
+              "correct": false
+            }
+          ],
+          "seen": false
         }
       ],
       "intermediate": [
@@ -85,6 +112,33 @@
             }
           ],
           "seen": false
+        },
+        {
+          "chinese": "「彌賽亞」一詞在希伯來文的原意是什麼？",
+          "english": "What does `Messiah` mean in Hebrew?",
+          "answer_options": [
+            {
+              "chinese": "受膏者",
+              "english": "The Annointed",
+              "correct": true
+            },
+            {
+              "chinese": "以馬內利",
+              "english": "Emmanuel",
+              "correct": false
+            },
+            {
+              "chinese": "救贖主",
+              "english": "The Redeemer",
+              "correct": false
+            },
+            {
+              "chinese": "以色列的聖者",
+              "english": "The Holy One in Israel",
+              "correct": false
+            }
+          ],
+          "seen": false
         }
       ],
       "difficult": [
@@ -111,6 +165,33 @@
               "chinese": "以挪士",
               "english": "Enosh",
               "correct": false
+            }
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "「約」的希臘文是什麼？",
+          "english": "What is the Greek word for `covenant`?",
+          "answer_options": [
+            {
+              "chinese": "αἰών",
+              "english": "aiōn",
+              "correct": false
+            },
+            {
+              "chinese": "ἀγάπη",
+              "english": "agapē",
+              "correct": false
+            },
+            {
+              "chinese": "θεός",
+              "english": "theos",
+              "correct": false
+            },
+            {
+              "chinese": "διαθήκη",
+              "english": "diathēkē",
+              "correct": true
             }
           ],
           "seen": false
@@ -173,6 +254,33 @@
             }
           ],
           "seen": false
+        },
+        {
+          "chinese": "四加三等於？",
+          "english": "4+3=?",
+          "answer_options": [
+            {
+              "chinese": "五",
+              "english": "5",
+              "correct": false
+            },
+            {
+              "chinese": "六",
+              "english": "6",
+              "correct": false
+            },
+            {
+              "chinese": "七",
+              "english": "7",
+              "correct": true
+            },
+            {
+              "chinese": "八",
+              "english": "8",
+              "correct": false
+            }
+          ],
+          "seen": false
         }
       ],
       "intermediate": [
@@ -204,27 +312,27 @@
           "seen": false
         },
         {
-          "chinese": "以下哪一條橋不接駁馬里蘭州和弗吉尼亞州？",
-          "english": "Which of the following bridges does not connect Maryland and Virginia?",
+          "chinese": "馬里蘭州人在清蒸藍蟹時喜歡加什麼調味料？",
+          "english": "What seasonings do the Marylanders love to add in steaming blue crabs?",
           "answer_options": [
             {
-              "chinese": " ",
-              "english": "Chesapeake Bay Bridge",
+              "chinese": "海灣調味料",
+              "english": "Bay seasoning",
               "correct": true
             },
             {
-              "chinese": " ",
-              "english": "Woodraw Wilson Bridge",
+              "chinese": "李錦記",
+              "english": "Lee Kum Kee",
               "correct": false
             },
             {
-              "chinese": " ",
-              "english": "American Legion Memorial Bridge",
+              "chinese": "老乾媽",
+              "english": "Lao Gan Ma",
               "correct": false
             },
             {
-              "chinese": " ",
-              "english": "Chain Bridge",
+              "chinese": "孜然",
+              "english": "cumin",
               "correct": false
             }
           ],
@@ -254,6 +362,33 @@
             {
               "chinese": " ",
               "english": "40",
+              "correct": false
+            }
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "現時美國眾議院有多少成員？",
+          "english": "How many congress(wo)men are there in the US House right now?",
+          "answer_options": [
+            {
+              "chinese": " ",
+              "english": "425",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "430",
+              "correct": true
+            },
+            {
+              "chinese": " ",
+              "english": "435",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "440",
               "correct": false
             }
           ],
