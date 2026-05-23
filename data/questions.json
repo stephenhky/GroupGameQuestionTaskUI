@@ -80,18 +80,41 @@
       ],
       "intermediate": [
         {
-          "chinese": "澳大利亞的首都是____",
-          "english": "The capital of Australia is _____",
+          "chinese": "以下哪一條橋不接駁馬里蘭州和弗吉尼亞州？",
+          "english": "Which of the following bridges does not connect Maryland and Virginia?",
           "answer_options": [
-            {"chinese": "悉尼", "english": "Sydney", "correct": false},
-            {"chinese": "坎培拉", "english": "Canberra", "correct": true},
-            {"chinese": "墨爾本", "english": "Melbourne", "correct": false},
-            {"chinese": "布里斯班", "english": "Brisbane", "correct": false}
+            {"chinese": " ", "english": "Chesapeake Bay Bridge", "correct": true},
+            {"chinese": " ", "english": "Woodraw Wilson Bridge", "correct": false},
+            {"chinese": " ", "english": "American Legion Memorial Bridge", "correct": false},
+            {"chinese": " ", "english": "Chain Bridge", "correct": false}
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "以下哪一條橋不接駁馬里蘭州和弗吉尼亞州？",
+          "english": "Which of the following bridges does not connect Maryland and Virginia?",
+          "answer_options": [
+            {"chinese": " ", "english": "Chesapeake Bay Bridge", "correct": true},
+            {"chinese": " ", "english": "Woodraw Wilson Bridge", "correct": false},
+            {"chinese": " ", "english": "American Legion Memorial Bridge", "correct": false},
+            {"chinese": " ", "english": "Chain Bridge", "correct": false}
           ],
           "seen": false
         }
       ],
-      "difficult": []
+      "difficult": [
+        {
+          "chinese": "陳奕迅主唱《K歌之王》中內含多首歌名？",
+          "english": "How many song names are included in Eason Chan's 'King of Karaoke'?",
+          "answer_options": [
+            {"chinese": " ", "english": "12", "correct": false},
+            {"chinese": " ", "english": "26", "correct": true},
+            {"chinese": " ", "english": "32", "correct": false},
+            {"chinese": " ", "english": "40", "correct": false}
+          ],
+          "seen": false
+        }
+      ]
     }
   }
 }
