@@ -64,7 +64,7 @@ if st.session_state.step >= 0:
         st.rerun()
     
     if st.session_state.category:
-        st.text(f"題目類型: {st.session_state.category}")
+        st.markdown(f"# 題目類型: {st.session_state.category}")
 
 # Step 2: Choose difficulty
 if st.session_state.step >= 1:
@@ -83,7 +83,7 @@ if st.session_state.step >= 1:
         st.rerun()
     
     if st.session_state.difficulty_level:
-        st.text(f"難度: {chinese_difficulty_levels[st.session_state.difficulty_level]}")
+        st.markdown(f"# 難度: {chinese_difficulty_levels[st.session_state.difficulty_level]}")
 
 # Step 3: Show question
 if st.session_state.step >= 2:
@@ -120,10 +120,14 @@ if st.session_state.step >= 2:
 
 # Step 4: Display question and collect answer
 if st.session_state.step >= 3 and st.session_state.picked_question:
-    st.text(st.session_state.picked_question.chinese)
-    st.text(st.session_state.picked_question.english)
+    st.markdown(f"<span style='color:red; font-weight:bold; font-size:1.2rem'>{st.session_state.picked_question.chinese}</span>", unsafe_allow_html=True)
+    st.markdown(f"<span style='color:red; font-weight:bold; font-size:1.2rem'>{st.session_state.picked_question.english}</span>", unsafe_allow_html=True)
 
     answer_options = st.session_state.picked_question.answer_options
+    st.markdown(
+        "<style>div[data-testid='stRadio'] label p { color: blue !important; }</style>",
+        unsafe_allow_html=True
+    )
     radio_button_format_func = lambda pickidx: \
         f"{answer_options[pickidx-1].chinese} {answer_options[pickidx-1].english}"
     st.session_state.player_selected_answer = st.radio(
@@ -144,11 +148,11 @@ if st.session_state.step >= 4 and st.session_state.picked_question and st.sessio
     correct = selected_option.correct
     
     if correct is None:
-        st.text("人肉評判")
+        st.markdown("人肉評判")
     elif correct:
-        st.text("正確！")
+        st.markdown("正確！")
     else:
-        st.text("不正確喔！正確答案是：")
+        st.markdown("不正確喔！正確答案是：")
         for i, answer_option in enumerate(answer_options):
             if (answer_option.correct is not None) and (answer_option.correct):
                 st.text(f"{i+1}: {answer_option.chinese} {answer_option.english}")
