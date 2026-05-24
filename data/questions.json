@@ -536,7 +536,7 @@
             {
               "chinese": " ",
               "english": "Baltimore Oriole",
-              "correct": false
+              "correct": true
             },
             {
               "chinese": " ",
@@ -546,7 +546,7 @@
             {
               "chinese": " ",
               "english": "Northern Cardinal",
-              "correct": true
+              "correct": false
             },
             {
               "chinese": " ",
