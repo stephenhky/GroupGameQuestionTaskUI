@@ -47,7 +47,18 @@ if 'player_selected_answer' not in st.session_state:
 # Step 1: Choose category
 if st.session_state.step >= 0:
     if st.button("題目類型"):
-        st.session_state.category = choice(categories)
+        available_categories = [
+            cat for cat in categories
+            if any(
+                not q.seen
+                for level in difficulty_levels
+                for q in getattr(question_dataset.dataset[cat], level)
+            )
+        ]
+        if not available_categories:
+            st.warning("所有類型的題目都已經出過了！")
+            st.stop()
+        st.session_state.category = choice(available_categories)
         st.session_state.step = 1
         logger.info(f"Category: {st.session_state.category}")
         st.rerun()
@@ -58,7 +69,15 @@ if st.session_state.step >= 0:
 # Step 2: Choose difficulty
 if st.session_state.step >= 1:
     if st.button("難度"):
-        st.session_state.difficulty_level = choice(difficulty_levels)
+        question_category = question_dataset.dataset.get(st.session_state.category)
+        available_difficulty_levels = [
+            level for level in difficulty_levels
+            if any(not q.seen for q in getattr(question_category, level))
+        ]
+        if not available_difficulty_levels:
+            st.warning(f"「{st.session_state.category}」所有難度的題目都已經出過了！")
+            st.stop()
+        st.session_state.difficulty_level = choice(available_difficulty_levels)
         st.session_state.step = 2
         logger.info(f"Difficulty level: {st.session_state.difficulty_level}")
         st.rerun()
