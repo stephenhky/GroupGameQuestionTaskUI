@@ -139,6 +139,33 @@
             }
           ],
           "seen": false
+        },
+        {
+          "chinese": "為什麼以掃失去了長子名分？",
+          "english": "Why did Esau lose his birthright?",
+          "answer_options": [
+            {
+              "chinese": "他娶了迦南地女子為妻",
+              "english": "He married a Canaanite woman.",
+              "correct": false
+            },
+            {
+              "chinese": "他和父親的妾發生了關係",
+              "english": "He slept with his father's concubine.",
+              "correct": false
+            },
+            {
+              "chinese": "他以長子名份換了雅各的紅湯",
+              "english": "He exchanged his birthright for Jacob's red stew.",
+              "correct": true
+            },
+            {
+              "chinese": "他殺了亞伯",
+              "english": "He killed Abel.",
+              "correct": false
+            }
+          ],
+          "seen": false
         }
       ],
       "difficult": [
@@ -192,6 +219,33 @@
               "chinese": "διαθήκη",
               "english": "diathēkē",
               "correct": true
+            }
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "《聖經》哪一書卷提到沒有什麼誰能使我們與基督的愛隔絕？",
+          "english": "Which book of the Bible says nothing can separate us from Christ's love?",
+          "answer_options": [
+            {
+              "chinese": "路加福音",
+              "english": "Luke",
+              "correct": false
+            },
+            {
+              "chinese": "彼得前書",
+              "english": "1 Peter",
+              "correct": false
+            },
+            {
+              "chinese": "羅馬書",
+              "english": "Romans",
+              "correct": true
+            },
+            {
+              "chinese": "約翰一書",
+              "english": "1 John",
+              "correct": false
             }
           ],
           "seen": false
@@ -281,6 +335,33 @@
             }
           ],
           "seen": false
+        },
+        {
+          "chinese": "以下哪一位並不是九十年代香港樂壇的「四大天王」？",
+          "english": "Which of the following is not one of the 'Four Heavenly Kings' of the Hong Kong music scene in the 1990s?",
+          "answer_options": [
+            {
+              "chinese": "劉德華",
+              "english": "Andy Lau",
+              "correct": false
+            },
+            {
+              "chinese": "黎明",
+              "english": "Leon Lai",
+              "correct": false
+            },
+            {
+              "chinese": "張學友",
+              "english": "Jacky Cheung",
+              "correct": false
+            },
+            {
+              "chinese": "張國榮",
+              "english": "Leslie Cheung",
+              "correct": true
+            }
+          ],
+          "seen": false
         }
       ],
       "intermediate": [
@@ -337,6 +418,33 @@
             }
           ],
           "seen": false
+        },
+        {
+          "chinese": "以下哪一位沒有當過馬里蘭州的州長？",
+          "english": "Who has not been the Governor of Maryland?",
+          "answer_options": [
+            {
+              "chinese": " ",
+              "english": "Martin O'Malley",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "Larry Hogan",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "Wes Moore",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "Ben Cardin",
+              "correct": true
+            }
+          ],
+          "seen": false
         }
       ],
       "difficult": [
@@ -389,6 +497,60 @@
             {
               "chinese": " ",
               "english": "440",
+              "correct": false
+            }
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "喬治敦大學是由天主教哪一個修會主辦？",
+          "english": "Which religious order is the University of Georgetown affiliated with?",
+          "answer_options": [
+            {
+              "chinese": "耶穌會",
+              "english": "The Jesuit",
+              "correct": true
+            },
+            {
+              "chinese": "多明我會",
+              "english": "The Dominican",
+              "correct": false
+            },
+            {
+              "chinese": "本篤會",
+              "english": "The Benedictine",
+              "correct": false
+            },
+            {
+              "chinese": "拉撒路會",
+              "english": "The Lazarist",
+              "correct": false
+            }
+          ],
+          "seen": false
+        },
+        {
+          "chinese": "以下哪一個不是馬里蘭州的州鳥？",
+          "english": "Which of the following is not the state bird of Maryland?",
+          "answer_options": [
+            {
+              "chinese": " ",
+              "english": "Baltimore Oriole",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "American Robin",
+              "correct": false
+            },
+            {
+              "chinese": " ",
+              "english": "Northern Cardinal",
+              "correct": true
+            },
+            {
+              "chinese": " ",
+              "english": "Eastern Bluebird",
               "correct": false
             }
           ],
