@@ -12,9 +12,8 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Dict, List
 
-from schemas.questions import QuestionDataset, QuestionSchema, AnswerOptionSchema
+from schemas.questions import QuestionDataset, QuestionSchema
 
 
 def validate_question_answers(question: QuestionSchema, category: str, difficulty: str, question_index: int) -> tuple[bool, str]:
